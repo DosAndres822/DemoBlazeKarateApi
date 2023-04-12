@@ -16,6 +16,7 @@ public class DemoBlazeApiRunner {
                 /*.tags("@sign");*/
               /*.tags("@signFail");*/
               /*.tags("@allSign");*/
+                /*.tags("@login");*/
               /*.tags("@loginFail");*/
              /*.tags("@loginWrongPass");*/
                 /*.tags("@allLogin");*/

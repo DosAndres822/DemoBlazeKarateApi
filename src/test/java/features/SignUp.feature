@@ -4,7 +4,7 @@ Feature: Test sign Up API
   @sign @allSign @allScenarios
   Scenario: Create new user
     Given url 'https://api.demoblaze.com/signup'
-    And request {username: 'GustavoMartinez6', password: '12345'}
+    And request {username: 'GustavoMartinez8', password: '12345'}
     When method Post
     Then status 200
     And match response contains '""'

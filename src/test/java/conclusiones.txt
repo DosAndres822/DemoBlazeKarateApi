@@ -1,0 +1,28 @@
+Conclusiones
+
+Hallazgos
+
+- En la variable tipo JSON de usuario es posible ingresar cualquier tipo de números o caracteres especiales, así como de cualquier tamaño.
+- Igualmente para la contraseña no tiene reglas de creación definidas, se puede ingresar cualquier cantidad y tipo de caracteres en cualquier tipo de orden.
+- También para la contraseña, es posible crear un usuario dejando el espacio de la contraseña en blanco, lo cual podría generar problemas en la base de datos.
+- Al realizar la creación de un usuario nuevo en el sistema, en la respuesta final no se está enviando un mensaje de contexto al usuario que indique de manera más natural,
+que el usuario ha sido creado con los datos ingresados ("").
+- Las repuesta para el intento de creación de un usuario ya registrado, se encuentra controlados he interceptados, generando así un resultado esperado de 200 OK el cual muestra
+un mensaje que indica al usuario que los datos que está ingresando ya han sido creados previamente ({"errorMessage": "This user already exist."}).
+- Para la autenticación de usuarios, cuando la misma es correcta se está generando un token que tiene un tiempo de caducidad, el cual a mi manera de ver podría ser más extenso,
+lo cual lo haría más seguro y fuerte en términos de seguridad.
+- Igualmente en la autenticación no se están entregando ningún tipo de mensaje al usuario que le indique de manera más natural que la misma se realizó de manera satisfactoria.
+- Con respecto a la validación de la contraseña errónea, es una excepción que se captura y genera un resultado satisfactorio 200 Ok que indica que se tiene control de la misma,
+que al igual por medio de mensaje indica que la contraseña ingresada no es correcta("errorMessage": "Wrong password.").
+- Para el caso cuando el usuario ingresado no ha sido registrado previamente, el mismo es controlado arrojando una respuesta satisfactoria 200 Ok que indica que la excepciones controlada,
+al igual enviando un mensaje al usuario indicando que el usuario ingresado no existe en el sistema ("errorMessage": "User does not exist.").
+
+Conclusiones del ejercicio
+
+Es muy útil para notar los parámetros importantes que se requieren en la validación de un API, lo cual se debe tener muy en cuenta a la hora realizar el testeo de una de las mismas,
+buscando que sea lo más eficiente y segura posible.
+
+Es importante traer a colación que la automatización de pruebas para APIs es algo que puede reducir considerablemente los tiempo de ejecución en regresiones o en segundas validaciones
+de las mismas, permitiendo de esta manera se más rápido y seguro el testeo de las misma, particularmente para este caso utilice el Framework de Karate ya que es muya amigable
+y su implementación sobre Cucumber y Gherkin abre una baraja de posibilidades útiles para realizar validaciones y garantizar de manera más amplia el buen funcionamiento de los servicio
+y Microservicios, ayudando a sí mismo a validar la integración de estos.
