@@ -1,6 +1,6 @@
 Feature: Test Login API
 
-  @login @allLogin
+  @login @allLogin @allScenarios
   Scenario: Login with user already create
     Given url 'https://api.demoblaze.com/login'
     And request {username: 'GustavoMartinez2', password: '12345'}
@@ -9,7 +9,7 @@ Feature: Test Login API
     And print response
     And match response == "#string"
 
-  @loginWrongPass @allLogin
+  @loginWrongPass @allLogin @allScenarios
   Scenario: Try to login with wrong password
     Given url 'https://api.demoblaze.com/login'
     And request {username: 'GustavoMartinez2', password: '123456'}
@@ -18,7 +18,7 @@ Feature: Test Login API
     And match response == {"errorMessage": "Wrong password."}
 
 
-  @loginFail @allLogin
+  @loginFail @allLogin @allScenarios
   Scenario: Try to login with user has not created
     Given url 'https://api.demoblaze.com/login'
     And request { username: 'CarlosLombana2', password: '12345' }
